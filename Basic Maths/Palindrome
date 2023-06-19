@@ -1,0 +1,15 @@
+public static void main(String[] args) {
+        int n = 10;
+        int original = n;
+        int reverseN = 0;
+        while(n > 0){
+            reverseN = reverseN * 10 + (n % 10);
+            n /= 10;
+        }
+
+        if(original == reverseN)
+            System.out.println("Palindrome");
+        else
+            System.out.println("Not a Palindrome");
+
+    }
