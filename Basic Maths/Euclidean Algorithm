@@ -1,0 +1,25 @@
+//Euclidean Algorithm/ Euclid's Algorithm
+    private static int gcd(int a, int b){
+        if (b == 0)
+            return a;
+        return gcd(b, a%b);
+    }
+
+    public static void main(String[] args) {
+        int num1 = 10;
+        int num2 = 45;
+
+        //Brute Force approach
+        int ans = 1;
+        for(int i = 1; i <= Math.min(num1, num2); i++){
+            if(num1 % i == 0 && num2 % i == 0)
+                ans = i;
+        }
+
+        System.out.println(ans);
+
+        //Euclidean Algorithm/ Euclid's Algorithm
+        // gcd(a,b) = gcd(b, a%b); where a > b
+        //base condition: gcd(a, 0) = a;
+
+        System.out.println(gcd(num1, num2));
