@@ -1,0 +1,28 @@
+    //Forward Tracking
+    private static void f(int i, int n){
+       if (i > n)
+           return;
+
+       System.out.println(i);
+
+       f(i+1, n);
+
+    }
+
+    //Backward Tracking
+    /*
+    private static void f(int i){
+        if (i < 1)
+            return;
+
+        f(i-1);
+
+        System.out.println("Neha");
+    }
+    */
+
+    public static void main(String[] args) {
+        f(1, 5);
+        //call for backward tracking
+        //f(5);
+    }
