@@ -1,0 +1,25 @@
+// Basically if we find one other divisor other than 1 and the number itself then the number is not prime.
+// Check if the number itself is 1.
+
+
+// Time Complexity = O(sqrt(N))
+// Space Complexity = O(1)
+    
+    private static boolean isPrime(int num){
+        for(int i = 2; i <= (int)Math.sqrt(num); i++){
+            if(num%i == 0)
+                return false;
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        //Take user input here
+        int num = 97; 
+        boolean ans = isPrime(num);
+
+        if(num != 1 && ans == true)
+            System.out.println("Prime");
+        else
+            System.out.println("Not Prime");
+    }
