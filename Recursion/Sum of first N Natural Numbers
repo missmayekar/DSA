@@ -1,0 +1,48 @@
+//Parametrised recursion (Forward Tracking)
+    /*
+    private static void f(int i, int sum, int n){
+        if (i > n){
+            System.out.println(sum);
+            return ;
+        }
+
+        f(i+1, sum+i, n);
+    }
+    */
+
+    //Using functional way
+    private static int f(int n){
+        if(n == 0)
+            return 0;
+
+        return n + f(n-1); //problem broken down into two parts and then combined
+
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        //Parametrised recursion (Forward Tracking)
+        /*Time Complexity: O(N) { Since the function is being called n times, and for each function, we have only one printable line 
+        that takes O(1) time, so the cumulative time complexity would be O(N) } */
+        /*Space Complexity: O(N) { In the worst case, the recursion stack space would be full of all the function 
+        calls waiting to get completed and that would make it an O(N) recursion stack space }.*/
+        //f(1, 0, n);
+
+        //using formula
+        //TC: O(1)
+        //SC: O(1)
+        System.out.println(n*(n+1)/2);
+
+        //using for loop
+        //TC: O(N)
+        //SC: O(1)
+        int sum = 0;
+        for (int i = 0; i <= n; i++){
+            sum += i;
+        }
+        System.out.println(sum);
+
+        //Using functional way
+        System.out.println(f(n));
+    }
