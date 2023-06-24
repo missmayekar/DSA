@@ -1,0 +1,40 @@
+   //1) Using two pointers
+    static void palindromeChecker(String stringToCheck){
+        int pointer1 = 0;
+        int pointer2 = stringToCheck.length() - 1 ;
+
+        while(pointer1 > pointer2){
+            if (stringToCheck.charAt(pointer1) != stringToCheck.charAt(pointer2)){
+                System.out.println("Not a palindrome");
+                return;
+            }
+
+            pointer1++;
+            pointer2--;
+        }
+
+        System.out.println("Palindrome");
+    }
+
+    //2) Using recursive approach
+    static void recursiveApproach(String stringToCheck, int start, int end){
+        if(start > end - 1){
+            System.out.println("Palindrome");
+            return;
+        }
+
+        if(stringToCheck.charAt(start) != stringToCheck.charAt(end - 1)){
+            System.out.println("Not a palindrome");
+            return;
+        }
+
+        recursiveApproach(stringToCheck, start+1, end-1);
+    }
+
+    public static void main(String[] args) {
+        String stringToCheck = "dad";
+        palindromeChecker(stringToCheck);
+
+        //calling recursive method
+        recursiveApproach(stringToCheck, 0, stringToCheck.length());
+    }
