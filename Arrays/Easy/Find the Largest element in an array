@@ -1,0 +1,13 @@
+ public static void main(String[] args) {
+        // TC: O(N)
+        // SC: O(1)
+        int[] a = {2,5,1,3,0};
+
+        int biggestNumber = a[0];
+        for(int i : a){
+            if (i > biggestNumber)
+                biggestNumber = i;
+        }
+
+        System.out.println(biggestNumber);
+    }
