@@ -1,0 +1,56 @@
+package Patterns;
+
+//import java.util.Arrays;
+
+public class DemoClass {
+        public static void main(String[] args) {
+            int[] array = {1, 2, 4, 7, 7, 5};
+            //int n = array.length;
+
+            /* Approach 1
+            TC: O(nlogn)
+            SC: O(1)
+            Arrays.sort(array);
+
+            int i = 0;
+            while(array[i] == array[i+1] || i+1 == n)
+                i++;
+            System.out.println(array[i+1]);
+
+            int j = n-1;
+            while(array[j] == array[j-1] || j-1 == 0)
+                j--;
+
+            System.out.println(array[j-1]);
+
+             */
+
+            //Approach 2
+            // TC: O(n)
+            // SC: O(1)
+            int largest = Integer.MIN_VALUE;
+            int secondLargest = Integer.MIN_VALUE;
+            int smallest = Integer.MAX_VALUE;
+            int secondSmallest = Integer.MAX_VALUE;
+
+            for (int i: array){
+                if(i > largest){
+                    secondLargest = largest;
+                    largest = i;
+                }
+                else if (i > secondLargest && i != largest)
+                    secondLargest = i;
+
+                if (i < smallest){
+                    secondSmallest = smallest;
+                    smallest = i;
+                }
+                else if (i < secondSmallest && i != smallest)
+                    secondSmallest = i;
+            }
+
+            System.out.println(secondLargest);
+            System.out.println(secondSmallest);
+        }
+
+}
