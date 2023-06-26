@@ -1,0 +1,18 @@
+import java.util.Arrays;
+public class DemoClass {
+        private void leftRotateByOne(int[] array){
+            int n = array.length;
+            int temp  = array[0];
+            for (int i = 0; i < n-1; i++)
+                array[i] = array[i+1];
+            array[n-1] = temp;
+            System.out.println(Arrays.toString(array));
+        }
+
+        public static void main(String[] args) {
+            int[] array = {1, 2, 3, 4, 5};
+            DemoClass object = new DemoClass();
+            object.leftRotateByOne(array);
+
+        }
+}
