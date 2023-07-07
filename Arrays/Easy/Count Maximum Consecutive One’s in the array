@@ -1,0 +1,15 @@
+  public static void main(String[] args) {
+        int[] a = {1, 1, 0, 1, 1, 1};
+        int currentCount = 0;
+        int maximumCount = Integer.MIN_VALUE;
+        for (int i : a){
+            if (i == 1)
+                currentCount += 1;
+            else
+                currentCount = 0;
+
+            maximumCount = Math.max(currentCount, maximumCount);
+        }
+
+        System.out.println(maximumCount);
+    }
