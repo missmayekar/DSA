@@ -1,0 +1,11 @@
+    public static void main(String[] args) {
+        int[] a = {1, 2, 4, 5};
+        int n = a.length + 1;
+        int actualSum = n*(n+1)/2;
+        int currentSum = 0;
+
+        for (int i : a)
+            currentSum += i;
+
+        System.out.println(actualSum - currentSum);
+    }
