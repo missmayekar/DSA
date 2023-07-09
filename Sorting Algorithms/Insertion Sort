@@ -1,0 +1,22 @@
+public static void main(String[] args) {
+        int[] a = {8, 2, 4, 1, 3};
+        int n = a.length;
+        int current;
+
+        for (int i = 0; i < n; i++) {
+            current = a[i];
+            int j = i - 1 ;
+
+            // Shifting items to the right
+            while (j >= 0 && a[j] > current) {
+               a[j+1] = a[j];
+               j--;
+            }
+
+            // Inserting the current element in the right position
+            a[j+1] = current;
+        }
+
+        // Printing the sorted array
+        System.out.println(Arrays.toString(a));
+    }
