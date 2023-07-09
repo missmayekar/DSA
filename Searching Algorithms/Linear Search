@@ -1,0 +1,12 @@
+  public static void main(String[] args) {
+        int[] a = {8, 2, 4, 1, 3};
+        int n = a.length;
+        int elementToSearch = 1;
+        for (int i = 0; i < n; i++){
+            // Comparing every element in the array with the element to be searched
+            if (a[i] == elementToSearch){
+                System.out.println("Element found at " + (i+1) + " index");
+                break;
+            }
+        }
+    }
